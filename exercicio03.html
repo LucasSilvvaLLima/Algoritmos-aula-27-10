@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sorte()">ver minha Sorte</button>
+    <div id="img"></div>
+    <div id="div_mansagem"></div>
+    
+</body>
+</html>
+<script>
+    function sorte(){
+        img.innerHTML = ""
+        div_mansagem.innerHTML = ""
+        var x = 0
+        
+        var sorte = 0
+        var amor = 0
+        for(; x <= 21; x++){
+            var sorteado = parseInt(1 + Math.random() * 2)
+            if (sorteado == 1) {
+                img.innerHTML += `<img src="https://img.freepik.com/vetores-gratis/carta-de-baralho-as-de-paus-isolada_1308-80924.jpg" alt="" style="height: 150px;">`
+                sorte++
+                if (sorte >= 11) {
+                    break
+                }
+            }else{
+                img.innerHTML += `<img src="https://i.pinimg.com/originals/27/42/95/274295614b1f1971b08ab25420222b6a.png" alt="" style="height: 150px;">`
+                amor++
+                if (amor >= 11) {
+                    break
+                }
+            }
+        }
+        var mensagem = ""
+        if (sorte > amor) {
+            mensagem = "Você tem mais sorte no jogo"
+        } else {
+            mensagem = "Você tem mais sorte no amor"
+        }
+
+        div_mansagem.innerHTML = mensagem
+    }
+</script>

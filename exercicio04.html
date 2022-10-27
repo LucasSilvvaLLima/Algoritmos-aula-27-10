@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Qual você prefere: 
+        <select name="" id="id_filme">
+            <option value="">Franquia</option>
+            <option value="1">Marvel</option>
+            <option value="2">DC</option>
+        </select>
+    </p>
+    <button onclick="programacao()">Ver programação semanal na TV</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function programacao(){
+        var filme = Number(id_filme.value)
+        for(var contador = 0;true;){
+            var sorteio = parseInt(1 + Math.random() * 2)        
+            contador++
+            if (contador > 5) {
+                div_mensagem.innerHTML = "É, ou lê um livro ou assiste um filme que não gosta mesmo"
+                break
+            }else if (filme == sorteio) {
+                div_mensagem.innerHTML = `Você verá um filme que gosta no ${contador}º dia`
+                break
+            }
+        }
+    }
+</script>
